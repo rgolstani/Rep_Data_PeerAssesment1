@@ -1,6 +1,7 @@
 ---
 title: "Peer Assignment 1"
-date: "March 11, 2015"
+output: word_document
+date: "March 14, 2015"
 ---
 
 This is an R Markdown document, generated for the Peer Assignment 1 part of the 'Reprducible Research Course'. It's recommended to read the README.md first to understand the requested work.
@@ -25,9 +26,9 @@ Aggregating data by Day or Interval. We will use these aggregated data files lat
 
 ```{r, total steps per day}
 aggSumByDay <- aggregate(steps ~ date, data, sum)
-names(aggSumByDay)[1]<- "day"
-names(aggSumByDay)[2]<- "totalsteps"
+names(aggSumByDay)<- c("day", "totalsteps")
 ```
+
 ```{r, total/mean steps for every 5 minutes section of day}
 aggSumByInterval<- aggregate(steps ~ interval, data, sum)
 names(aggSumByInterval)[2]<- "totalsteps"
